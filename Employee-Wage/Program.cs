@@ -4,24 +4,30 @@ namespace Employee
     class Program
     {
         /// <summary>
-        /// Check Employee Presence
+        /// Calculate Daily Employee Wage
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            //Constant
+            //Constants
             const int FULL_TIME = 1;
+            const int EMP_RATE_PER_HOUR = 20;
+            //Variables
+            int empHrs = 0;
+            int empWage = 0;
             Random random = new Random();
-            //Variable
+            //Computation
             int empCheck = random.Next(0, 2);
             if (empCheck == FULL_TIME)
             {
-                Console.WriteLine("Employee is Present.");
+                empHrs = 8;
             }
             else
             {
-                Console.WriteLine("Employee is Absent.");
+                empHrs = 0;
             }
+            empWage = empHrs * EMP_RATE_PER_HOUR;
+            Console.WriteLine("Daily Employee Wage is:" + empWage);
         }
     }
 }
