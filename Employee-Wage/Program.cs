@@ -4,21 +4,28 @@ namespace Employee
     class Program
     {
         /// <summary>
-        /// Calculate Daily Employee Wage
+        /// Add Part Time Employee and Wage
         /// </summary>
         /// <param name="args"></param>
+		
+	//Constants
+        const int PART_TIME = 1;
+        const int FULL_TIME = 2;
+        const int EMP_RATE_PER_HOUR = 20;
+		
         static void Main(string[] args)
         {
-            //Constants
-            const int FULL_TIME = 1;
-            const int EMP_RATE_PER_HOUR = 20;
             //Variables
             int empHrs = 0;
             int empWage = 0;
             Random random = new Random();
             //Computation
-            int empCheck = random.Next(0, 2);
-            if (empCheck == FULL_TIME)
+            int empCheck = random.Next(0, 3);
+            if (empCheck == PART_TIME)
+            {
+                empHrs = 4;
+            }
+            else if(empCheck == FULL_TIME)
             {
                 empHrs = 8;
             }
