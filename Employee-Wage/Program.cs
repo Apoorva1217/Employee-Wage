@@ -4,14 +4,14 @@ namespace Employee
     class Program
     {
         /// <summary>
-        /// Add Part Time Employee and Wage
+        /// Switch Case Statement
         /// </summary>
         /// <param name="args"></param>
 		
 	//Constants
-        const int PART_TIME = 1;
-        const int FULL_TIME = 2;
-        const int EMP_RATE_PER_HOUR = 20;
+	public const int PART_TIME=1;
+	public const int FULL_TIME=2;
+        public const int EMP_RATE_PER_HOUR = 20;
 		
         static void Main(string[] args)
         {
@@ -20,18 +20,18 @@ namespace Employee
             int empWage = 0;
             Random random = new Random();
             //Computation
-            int empCheck = random.Next(0, 3);
-            if (empCheck == PART_TIME)
+            int empCheck = random.Next(0,3);
+            switch (empCheck)
             {
-                empHrs = 4;
-            }
-            else if(empCheck == FULL_TIME)
-            {
-                empHrs = 8;
-            }
-            else
-            {
-                empHrs = 0;
+                case PART_TIME:
+                    empHrs = 4;
+                    break;
+                case FULL_TIME:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
             }
             empWage = empHrs * EMP_RATE_PER_HOUR;
             Console.WriteLine("Daily Employee Wage is:" + empWage);
